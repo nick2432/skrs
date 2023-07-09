@@ -41,6 +41,9 @@ io.on("connection", (socket) => {
   socket.on("accept",(data)=>{
     socket.broadcast.emit("accepted", data);
   });
+  socket.on("passenger",(data) => {
+    socket.broadcast.emit('pass',data);
+  });
 });
 app.use(express.json());
 app.use(helmet());
