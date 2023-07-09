@@ -44,6 +44,9 @@ io.on("connection", (socket) => {
   socket.on("passenger",(data) => {
     socket.broadcast.emit('pass',data);
   });
+  socket.on("details",(data) => {
+    socket.broadcast.emit('driverdetails',data);
+  });
 });
 app.use(express.json());
 app.use(helmet());
